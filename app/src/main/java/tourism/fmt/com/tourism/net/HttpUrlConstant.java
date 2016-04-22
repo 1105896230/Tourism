@@ -15,4 +15,5 @@ public class HttpUrlConstant {
     public static final String HttpUrl = "http://apis.haoservice.com/lifeservice/travel/cityList";
 
     public static final String HttpUrlGetCityList = HttpUrl + "?key=" + ApplicationConstant.APPKEY;
+    private static final String TAT="HttpUrlConstant";
 }
