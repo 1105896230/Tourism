@@ -32,12 +32,12 @@ public class HttpNet {
 
             @Override
             public void onResponse(final Response response) throws IOException {
-                netInterface.onSuccess(response);
+                netInterface.onSuccess(response.body().string());
             }
         });
     }
 
-    interface HttpNetInterface {
-        void onSuccess(Response response);
+    public interface HttpNetInterface {
+        void onSuccess(String response);
     }
 }

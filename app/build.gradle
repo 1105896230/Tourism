@@ -27,13 +27,15 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.alibaba:fastjson:1.1.45.android'
     // Json解析
-    compile 'com.j256.ormlite:ormlite-core:4.48'
     // sqlite ORM
+    compile files('libs/locSDK_6.23.jar')
+
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.alibaba:fastjson:1.1.45.android'
+    compile 'com.j256.ormlite:ormlite-core:4.48'
     compile 'com.j256.ormlite:ormlite-android:4.48'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.squareup.okio:okio:1.5.0'
-    compile files('libs/locSDK_6.23.jar')
+    compile 'com.android.support:support-v4:23.3.0'
 }

@@ -1,0 +1,12 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tourism.fmt.com.tourism.fragments.WeatherFragment">
+
+<ListView
+    android:id="@+id/weather"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></ListView>
+
+</FrameLayout>

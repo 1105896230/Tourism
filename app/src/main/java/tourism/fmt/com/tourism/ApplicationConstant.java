@@ -10,5 +10,8 @@ package tourism.fmt.com.tourism;/**
  *
  */
 public class ApplicationConstant {
-    public static final String APPKEY = "de757cb0f9ff43b9a5475e8e12790e76";
+    public static final String APPKEY = "5284825256244d5b904c9170c7e204a9";
+    public static final String WEATHER_KEY="4b834eb2f98746a78e47e7334833a254";
+
+    public static String mCity="北京";
 }
