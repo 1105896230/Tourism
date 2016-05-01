@@ -8,6 +8,8 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
+import org.json.JSONException;
+
 import java.io.IOException;
 
 /**
@@ -31,13 +33,19 @@ public class HttpNet {
             }
 
             @Override
-            public void onResponse(final Response response) throws IOException {
-                netInterface.onSuccess(response.body().string());
+            public void onResponse(final Response response) {
+                try {
+                    netInterface.onSuccess(response.body().string());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
     public interface HttpNetInterface {
-        void onSuccess(String response);
+        void onSuccess(String response) throws JSONException;
     }
 }

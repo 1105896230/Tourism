@@ -17,5 +17,6 @@ public class HttpUrlConstant {
     public static final String HttpUrlGetCityList = HttpUrl + "?key=" + ApplicationConstant.APPKEY;
 
     public static final String WEATHER = "http://apis.haoservice.com/weather?cityname="+ApplicationConstant.mCity+"&key="+ApplicationConstant.WEATHER_KEY;
+
     private static final String TAT="HttpUrlConstant";
 }
