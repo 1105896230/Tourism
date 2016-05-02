@@ -25,12 +25,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     // Json解析
     // sqlite ORM
     compile files('libs/locSDK_6.23.jar')
-
+    compile files('libs/AMap_3DMap_V3.3.1_20160419.jar')
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.alibaba:fastjson:1.1.45.android'
     compile 'com.j256.ormlite:ormlite-core:4.48'
@@ -38,6 +38,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.squareup.okio:okio:1.5.0'
     compile 'com.github.bumptech.glide:glide:3.5.2'
-
     compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile files('libs/AMap_Search_V3.2.1_20160308.jar')
 }

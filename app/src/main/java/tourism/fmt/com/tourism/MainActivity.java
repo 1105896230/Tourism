@@ -21,6 +21,7 @@ import java.util.List;
 
 import tourism.fmt.com.tourism.adapters.CommonPagerAdapter;
 import tourism.fmt.com.tourism.eneity.City;
+import tourism.fmt.com.tourism.fragments.DaoHangFragment;
 import tourism.fmt.com.tourism.fragments.TransLateFragmen;
 import tourism.fmt.com.tourism.fragments.WeatherFragment;
 import tourism.fmt.com.tourism.net.HttpNet;
@@ -53,8 +54,11 @@ public class MainActivity extends AppCompatActivity {
     private void initFragments() {
         WeatherFragment weatherFragment=new WeatherFragment();
         TransLateFragmen fragmen=new TransLateFragmen();
+        DaoHangFragment daoHangFragment=new DaoHangFragment();
+
         fragmentList.add(weatherFragment);
         fragmentList.add(fragmen);
+        fragmentList.add(daoHangFragment);
         CommonPagerAdapter adapter =
                 new CommonPagerAdapter(getSupportFragmentManager(), fragmentList);
         mVp.setAdapter(adapter);
@@ -89,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
        }
         mHandler.sendEmptyMessage(20);
     }
+
 
 
 
