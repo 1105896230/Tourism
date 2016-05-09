@@ -8,6 +8,41 @@
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@id/map"
+        android:background="#fff"
+        android:minWidth="130dip"
+        android:orientation="vertical"
+        android:padding="6dp" >
+
+        <Spinner
+            android:id="@+id/layers_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/traffic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/traffic" />
+
+        <CheckBox
+            android:id="@+id/building"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/buildings" />
+
+        <CheckBox
+            android:id="@+id/maptext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/maptext" />
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"

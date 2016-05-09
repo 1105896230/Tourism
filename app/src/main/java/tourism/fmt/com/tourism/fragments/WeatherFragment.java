@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.alibaba.fastjson.JSON;
@@ -19,6 +22,7 @@ import org.json.JSONObject;
 import java.util.List;
 import java.util.Observable;
 
+import tourism.fmt.com.tourism.ApplicationConstant;
 import tourism.fmt.com.tourism.R;
 import tourism.fmt.com.tourism.adapters.WeatherAdapter;
 import tourism.fmt.com.tourism.eneity.Future;
@@ -42,6 +46,8 @@ public class WeatherFragment extends Fragment {
     private ListView mList;
 
     private WeatherAdapter mAdpter;
+    private EditText ed;
+    private Button btn;
     private ToDay mToDay;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +55,16 @@ public class WeatherFragment extends Fragment {
         // Inflate the layout for this fragment
         inflate = inflater.inflate(R.layout.fragment_weather, container, false);
         mList= (ListView) inflate.findViewById(R.id.weather);
+        ed= (EditText) inflate.findViewById(R.id.edit_query);
+        btn= (Button) inflate.findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ApplicationConstant.mCity=ed.getText().toString();
+                ed.getText().clear();
+                getDatas();
+            }
+        });
         getDatas();
         return inflate;
     }
@@ -60,7 +76,7 @@ public class WeatherFragment extends Fragment {
     };
 
     private void  getDatas(){
-        HttpNet.HttpGet(HttpUrlConstant.WEATHER, new HttpNet.HttpNetInterface() {
+        HttpNet.HttpGet("http://apis.haoservice.com/weather?cityname="+ApplicationConstant.mCity+"&key="+ApplicationConstant.WEATHER_KEY, new HttpNet.HttpNetInterface() {
             @Override
             public void onSuccess(String response) {
                 try {
