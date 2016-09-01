@@ -8,7 +8,7 @@ import tourism.fmt.com.tourism.eneity.City;
  * User:FMT
  * Email:1105896230@qq.com
  * DATA:2016/3/12
- * Time:12:53 
+ * Time:12:53
  *
  */
 public class ApplicationConstant {
