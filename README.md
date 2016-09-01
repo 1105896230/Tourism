@@ -1,3 +1,3 @@
 
 -featureA
--featureB1,1
+-featureB1,1.3
